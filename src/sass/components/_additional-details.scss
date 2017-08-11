@@ -1,0 +1,77 @@
+
+@include b(additional-details-overlay) {
+    background: rgba($black, .6);
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+@include b(additional-details) {
+    background: $white;
+    bottom: 0;
+    box-shadow: 0 0 5em black;
+    color: $black;
+    max-width: 25em;
+    padding: 1em;
+    position: fixed;
+    right: 0;
+    text-align: left;
+    top: 0;
+    width: 85%;
+    z-index: 2;
+
+    @include breakpoint(map-get($breakpoints, mobile)) {
+        padding: 2em;
+        width: 50%;
+    }
+
+    @include e(image) {
+        @include square(5em);
+        margin: 0 auto 1em;
+
+        @include breakpoint(map-get($breakpoints, mobile)) {
+            @include square(10em);
+        }
+    }
+
+    @include e(divider) {
+        background: $color--primary;
+        height: 2px;
+        margin-bottom: 2em;
+    }
+
+    @include e(button) {
+        background: $color--primary;
+        border-radius: $global--border-radius;
+        color: $white;
+        font-weight: bold;
+        margin-top: 2em;
+        padding: 1em;
+        transition: background .2s ease-out;
+        width: 100%;
+
+        &:hover {
+            background: darken($color--primary, 5%);
+        }
+    }
+
+    table {
+        font-size: .875rem;
+        width: 100%;
+
+        tr {
+            border-bottom: 1px solid rgba($black, .1);
+        }
+
+        td {
+            padding: .25em 1em;
+        }
+    }
+
+    p {
+        line-height: 1.25;
+    }
+}

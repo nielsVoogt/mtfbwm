@@ -1,0 +1,14 @@
+div,
+span {
+    &[data-image-type="people"] {
+        background: url('../img/img-people.jpg') no-repeat center center/70% $white;
+    }
+
+    &[data-image-type="starships"] {
+        background: url('../img/img-starships.jpg') no-repeat center center/70% $white;
+    }
+
+    &[data-image-type="planets"] {
+        background: url('../img/img-planets.jpg') no-repeat center center/70% $white;
+    }
+}

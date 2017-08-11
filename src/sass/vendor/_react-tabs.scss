@@ -1,0 +1,32 @@
+
+@include b(react-tabs) {
+    @include e(tab-list) {
+        background: $white;
+        border-radius: $global--border-radius;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        @include breakpoint(map-get($breakpoints, mobile)) {
+            flex-direction: row;
+        }
+    }
+
+    @include e(tab) {
+        color: rgba($type--base-text-color, .5);
+        cursor: pointer;
+        display: table-cell;
+        flex: 1;
+        font-family: $type--secondary-font-family;
+        padding: .25em .5em;
+        transition: color .2s ease-out;
+
+        &:hover {
+            color: $type--base-text-color;
+        }
+
+        @include m(selected) {
+            color: $type--base-text-color;
+        }
+    }
+}

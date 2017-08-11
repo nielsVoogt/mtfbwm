@@ -1,0 +1,72 @@
+
+@include b(data-item) {
+    @extend %clearfix;
+    background: rgba($white, .1);
+    color: $white;
+    margin: 1em;
+    padding: 2em 1em;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint(map-get($breakpoints, mobile)) {
+        width: calc(100% / 2 - 2em);
+    }
+
+    @include breakpoint(map-get($breakpoints, tablet)) {
+        width: calc(100% / 3 - 2em);
+    }
+
+    @include e(image) {
+        @include circle(5em);
+        background: $white;
+        margin: 0 auto 1em;
+
+        [class$='--table'] & {
+            @include circle(2em);
+            display: inline-block;
+            margin: 0 1em 0 0;
+            vertical-align: middle;
+        }
+    }
+
+    @include e(name) {
+        font-family: $type--secondary-font-family;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: lowercase;
+        white-space: nowrap;
+
+        [class$='--table'] & {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    @include e(open-additonal-details) {
+        margin-top: 2em;
+
+        [class$='--table'] & {
+            display: block;
+            margin-top: 1em;
+            width: 100%;
+
+            @include breakpoint(map-get($breakpoints, mobile)) {
+                display: inline-block;
+                float: right;
+                margin-top: 0;
+                vertical-align: middle;
+                width: auto;
+            }
+        }
+    }
+
+    [class$='--table'] & {
+        margin: .5em 0;
+        padding: .5em 1em;
+        width: 100%;
+
+        @include breakpoint(map-get($breakpoints, mobile)) {
+            text-align: left;
+        }
+    }
+}

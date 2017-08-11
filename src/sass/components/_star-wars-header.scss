@@ -1,0 +1,28 @@
+
+@include b(star-wars-header) {
+    padding: 1em 0;
+
+    @include breakpoint(map-get($breakpoints, mobile)) {
+        padding: 3em 0;
+    }
+
+    @include e(divider) {
+        background: $color--primary;
+        margin: 2em 0 0;
+    }
+
+    @include e(switch-view) {
+        background: $black;
+        display: block;
+        margin: 0 auto;
+        transform: translateY(-50%);
+    }
+
+    @include e(logo) {
+        display: block;
+        fill: $color--primary;
+        height: auto;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+}

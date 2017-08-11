@@ -1,0 +1,12 @@
+
+@include b(wrapper) {
+    max-width: $layout--container-max-width;
+    margin: 0 auto;
+    width: 90%;
+}
+
+@include b(data-container) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em 0;
+}
