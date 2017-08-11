@@ -35,7 +35,7 @@ class Details extends Component {
         }
 
         return (
-            <div>
+            <div className="additional-details-holder">
                 <button className="data-item__open-additonal-details btn">
                     Show more details
                 </button>

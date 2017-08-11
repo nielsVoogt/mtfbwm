@@ -60,6 +60,14 @@
         }
     }
 
+    @include b(additional-details-holder) {
+        display: inline-block;
+        float: right;
+        margin-top: 0;
+        vertical-align: middle;
+        width: auto;
+    }
+
     [class$='--table'] & {
         margin: .5em 0;
         padding: .5em 1em;
