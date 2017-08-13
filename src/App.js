@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import People from './components/people';
-import Planets from './components/planets';
-import Starships from './components/starships';
+import Data from './components/data';
 import axios from 'axios';
 import './css/main.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -73,13 +71,26 @@ class App extends Component {
                     </TabList>
                     <div className={this.state.grid === false ? 'view view--table' : 'view' } >
                         <TabPanel>
-                            <People people={people} />
+                            <Data
+                                data={people}
+                                type="people"
+                                details={["name", "height", "mass", "hair_color", "skin_color", "eye_color", "birth_year", "gender"]}
+                            />
                         </TabPanel>
                         <TabPanel>
-                            <Starships starships={starships}/>
+
+                            <Data
+                                data={starships}
+                                type="starships"
+                                details={["name", "model", "manufacturer", "cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers"]}
+                            />
                         </TabPanel>
                         <TabPanel>
-                            <Planets planets={planets}/>
+                            <Data
+                                data={planets}
+                                type="planets"
+                                details={["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water"]}
+                            />
                         </TabPanel>
                     </div>
                 </Tabs>

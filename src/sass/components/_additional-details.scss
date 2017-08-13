@@ -30,6 +30,7 @@
 
     @include e(image) {
         @include square(5em);
+        display: block;
         margin: 0 auto 1em;
 
         @include breakpoint(map-get($breakpoints, mobile)) {
@@ -68,6 +69,10 @@
 
         td {
             padding: .25em 1em;
+
+            &:first-child {
+                text-transform: capitalize;
+            }
         }
     }
 
